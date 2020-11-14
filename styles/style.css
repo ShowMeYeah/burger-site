@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    font-size: 20px;
+    background-color: #E09718;
+}
+
+.red-area{
+    transform: translate(-800px,-600px);
+}
