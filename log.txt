@@ -1,1 +1,2 @@
 --Changed the Homepage UI
+--Added both the pages, UI design is complete, need further functionality.

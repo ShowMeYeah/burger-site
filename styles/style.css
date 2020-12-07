@@ -1,7 +1,13 @@
+@font-face{
+    src: url('../fonts/Black\ Burger\ Rough.ttf');
+    font-family: blackburger;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: none;
 }
 
 :root{
@@ -10,13 +16,26 @@
     --secondaryColor: #921010;
     --secondaryGradient: linear-gradient(135deg, rgba(219,62,62,1) 0%, rgba(110,12,12,1) 96%);
     --titleFont: 'Nerko One', cursive;
-    --secondaryFont: 'Lobster', cursive;
-    --primaryFont: 'Josefin Sans', sans-serif;
+}
+
+h1{
+    font-family: blackburger;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
 }
 
 body, html{
     background: var(--primaryGradient);
-    overflow: hidden;
+    /*overflow: hidden;*/
+    scroll-behavior: smooth;
+    font-family: var(--titleFont);
 }
 
 .home-page{
@@ -44,14 +63,19 @@ body, html{
 .nav-container{
     display: flex;
     justify-content: space-between;
+    margin-right: 26px;
 }
 
 .logo-container{
     z-index: 0;
 }
 
+.logo-container img{
+    padding-right: 20px;
+}
+
 #title{
-    font-family: var(--titleFont);
+    font-family: blackburger;
     z-index: 1;
     font-size: 50px;
     flex: 1;
@@ -71,25 +95,37 @@ body, html{
 }
 
 .nav-bar ul li{
-    font-family: var(--primaryFont);
-    padding-left: 20px;
+    font-family: blackburger;
+    padding-left: 35px;
 }
 
 .nav-bar ul li a{
     text-decoration: none;
-    font-weight: bolder;
-    color: #000000;
+    font-weight: 600;
 }
 
 .nav-bar ul li a:hover{
-    border-bottom: 3px #2F2A26 solid;
-    padding-bottom: 3px;
+    border-bottom: black 3px solid;
+    padding-bottom: 2px;
 }
 
 .nav-container img{
     cursor: pointer;
     margin-left: 20px;
     transform: translateY(5px);
+}
+
+.scroll{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.scroll h3{
+    font-family: blackburger;
+    padding-top: 60px;
 }
 
 .social-links{
@@ -110,51 +146,52 @@ body, html{
     margin: 12px 0;
 }
 
+.social-links a:hover{
+    transform: translateY(-2px);
+}
+
+
 .burger-hero{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around
 }
 
 #main-burger{
     z-index: 3;
-    flex: 3;
-    padding-left: 60px;
+    width: 60%;
+    padding-left: 200px;
 }
 
 .text-area{
     align-items: center;
     justify-content: center;
     line-height: 0.8;
-    flex: 1;
-    padding-top: 180px;
-}
-
-#super{
-    font-family: var(--primaryFont);
-    font-size: 60px;
+    margin-top: 120px;
 }
 
 #delicious{
-    font-family: var(--secondaryFont);
-    font-size: 60px;
+    font-family: blackburger;
+    font-size: 80px;
     font-weight: 100;
     transform: translateX(-5px);
 }
 
 #burger{
-    font-family: var(--primaryFont);
-    font-size: 60px;
+    font-family: blackburger;
+    font-size: 70px;
     margin-top: 4px;
 }
 
 p{
     margin-top: 10px;
-    font-family: var(--primaryFont);
+    font-family: var(--titleFont);
+    font-weight: 200;
+    font-size: 20px;
 }
 
 #fhd{
     color: #000000;
-    font-family: var(--secondaryFont);
+    font-family: blackburger;
     margin-top: 20px;
 }
 .order-btn{
@@ -169,7 +206,7 @@ p{
 
 .order-btn a{
     text-decoration: none;
-    color: #c7b2b2ea;
+    color: rgba(218,170,88,1);
     font-size: 20px;
     font-family: var(--titleFont);
 }
@@ -177,3 +214,140 @@ p{
 .order-btn:hover{
     transform: translateY(-3px);
 }
+
+.deals-page{
+    background: linear-gradient(110deg, rgba(219,62,62,1) 0%,rgba(110,12,12,1) 80%);
+}
+.deals-container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#deals{
+    margin-top: 100px;
+    font-size: 60px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+    margin: 40px 0;
+}
+
+.chicken-delight img:hover{
+    cursor: pointer;
+    transform: scale(120%);
+}
+
+.veggie-delight img:hover{
+    cursor: pointer;
+    transform: scale(120%);
+}
+
+.mutton-delight img:hover{
+    cursor: pointer;
+    transform: scale(120%);
+}
+
+.text-details{
+    width: 65%;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.text-details h3{
+    font-family: blackburger;
+    font-size: 26px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.add-to-cart{
+    display: inline-block;
+    cursor: pointer;
+    background: var(--primaryColor);
+    border-radius: 41px;
+    margin-top: 10px;
+    padding: 15px;
+    margin-left: 80px;
+}
+
+.add-to-cart a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+    font-family: var(--titleFont);
+}
+
+.add-to-cart:hover{
+    transform: translateY(-3px);
+}
+
+.contact-page{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.places{
+    display: flex;
+    justify-content: space-around;
+}
+
+.places li{
+    padding-left: 35px;
+    margin-top: 15px;
+}
+
+.places li a.active{
+    border-bottom: black 3px solid;
+}
+
+.places li a:hover{
+    border-bottom: black 3px solid;
+    padding-bottom: 2px;
+}
+
+.display{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+.address{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 70px;
+}
+
+.address h2{
+    font-family: blackburger;
+    font-size: 25px;
+}
+
+footer{
+    background-color: var(--secondaryColor);
+}
+
+.footer-container{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+
+
